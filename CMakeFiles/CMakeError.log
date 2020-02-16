@@ -1,0 +1,367 @@
+Performing C SOURCE FILE Test FOUND_BSD44SOCKETS failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ea700/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ea700.dir/build.make CMakeFiles/cmTC_ea700.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ea700.dir/src.c.o
+/usr/bin/cc   -DFOUND_BSD44SOCKETS   -o CMakeFiles/cmTC_ea700.dir/src.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c:13:6: error: ‘struct sockaddr_in’ has no member named ‘sin_len’; did you mean ‘sin_zero’?
+   sa.sin_len = 0;
+      ^~~~~~~
+      sin_zero
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c:15:13: error: ‘struct sockaddr_in’ has no member named ‘sin_len’; did you mean ‘sin_zero’?
+   return sa.sin_len;
+             ^~~~~~~
+             sin_zero
+CMakeFiles/cmTC_ea700.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_ea700.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ea700.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ea700/fast' failed
+make: *** [cmTC_ea700/fast] Error 2
+
+Source file was:
+
+
+	#include <sys/types.h>
+
+	#include <sys/socket.h>
+
+	#include <netinet/in.h>
+
+	int main(void) {
+
+		struct sockaddr_in sa;
+
+		sa.sin_len = 0;
+
+		return sa.sin_len;
+
+	}
+Performing C SOURCE FILE Test FOUND_SVR4 failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b62b0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b62b0.dir/build.make CMakeFiles/cmTC_b62b0.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b62b0.dir/src.c.o
+/usr/bin/cc   -DFOUND_SVR4   -o CMakeFiles/cmTC_b62b0.dir/src.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/src.c:5:3: error: #error 
+  #error
+   ^~~~~
+CMakeFiles/cmTC_b62b0.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_b62b0.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b62b0.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b62b0/fast' failed
+make: *** [cmTC_b62b0/fast] Error 2
+
+Source file was:
+
+
+	#if !defined(SVR4) && !defined(__svr4__) && !defined(__SVR4)
+
+	#error
+
+	#endif
+
+	int main(void) { return 0; }
+
+Determining if files ieeefp.h exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bcafb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bcafb.dir/build.make CMakeFiles/cmTC_bcafb.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bcafb.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_bcafb.dir/CheckIncludeFiles.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckIncludeFiles.c:2:10: fatal error: ieeefp.h: No such file or directory
+ #include <ieeefp.h>
+          ^~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_bcafb.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_bcafb.dir/CheckIncludeFiles.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_bcafb.dir/CheckIncludeFiles.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_bcafb/fast' failed
+make: *** [cmTC_bcafb/fast] Error 2
+
+Source:
+/* */
+#include <ieeefp.h>
+
+
+int main(void){return 0;}
+
+Determining if the getpeereid exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7e842/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7e842.dir/build.make CMakeFiles/cmTC_7e842.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7e842.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_7e842.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘getpeereid’ undeclared (first use in this function); did you mean ‘getresgid’?
+   return ((int*)(&getpeereid))[argc];
+                   ^~~~~~~~~~
+                   getresgid
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_7e842.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_7e842.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_7e842.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7e842/fast' failed
+make: *** [cmTC_7e842/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpeereid
+  return ((int*)(&getpeereid))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the getpeerucred exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_09360/fast"
+/usr/bin/make -f CMakeFiles/cmTC_09360.dir/build.make CMakeFiles/cmTC_09360.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_09360.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_09360.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: ucred.h: No such file or directory
+ #include <ucred.h>
+          ^~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_09360.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_09360.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_09360.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_09360/fast' failed
+make: *** [cmTC_09360/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <ucred.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getpeerucred
+  return ((int*)(&getpeerucred))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the getzoneid exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1c435/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1c435.dir/build.make CMakeFiles/cmTC_1c435.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c435.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_1c435.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: zone.h: No such file or directory
+ #include <zone.h>
+          ^~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_1c435.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_1c435.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_1c435.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1c435/fast' failed
+make: *** [cmTC_1c435/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <zone.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef getzoneid
+  return ((int*)(&getzoneid))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the arc4random_buf exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_df336/fast"
+/usr/bin/make -f CMakeFiles/cmTC_df336.dir/build.make CMakeFiles/cmTC_df336.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_df336.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_df336.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘arc4random_buf’ undeclared (first use in this function); did you mean ‘srandom_r’?
+   return ((int*)(&arc4random_buf))[argc];
+                   ^~~~~~~~~~~~~~
+                   srandom_r
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_df336.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_df336.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_df336.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_df336/fast' failed
+make: *** [cmTC_df336/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef arc4random_buf
+  return ((int*)(&arc4random_buf))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the shmctl64 exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4341a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4341a.dir/build.make CMakeFiles/cmTC_4341a.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4341a.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_4341a.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: sys/ipc_impl.h: No such file or directory
+ #include <sys/ipc_impl.h>
+          ^~~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_4341a.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_4341a.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4341a.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_4341a/fast' failed
+make: *** [cmTC_4341a/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <sys/ipc_impl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef shmctl64
+  return ((int*)(&shmctl64))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strlcat exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3bb6e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3bb6e.dir/build.make CMakeFiles/cmTC_3bb6e.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3bb6e.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_3bb6e.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strlcat’ undeclared (first use in this function); did you mean ‘strncat’?
+   return ((int*)(&strlcat))[argc];
+                   ^~~~~~~
+                   strncat
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_3bb6e.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_3bb6e.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_3bb6e.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3bb6e/fast' failed
+make: *** [cmTC_3bb6e/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcat
+  return ((int*)(&strlcat))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strlcpy exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_63cc2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_63cc2.dir/build.make CMakeFiles/cmTC_63cc2.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_63cc2.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_63cc2.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘strlcpy’ undeclared (first use in this function); did you mean ‘strncpy’?
+   return ((int*)(&strlcpy))[argc];
+                   ^~~~~~~
+                   strncpy
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_63cc2.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_63cc2.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_63cc2.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_63cc2/fast' failed
+make: *** [cmTC_63cc2/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strlcpy
+  return ((int*)(&strlcpy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the timingsafe_memcmp exist failed with the following output:
+Change Dir: /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9fe25/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9fe25.dir/build.make CMakeFiles/cmTC_9fe25.dir/build
+make[1]: Entering directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9fe25.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE   -o CMakeFiles/cmTC_9fe25.dir/CheckSymbolExists.c.o   -c /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: error: ‘timingsafe_memcmp’ undeclared (first use in this function)
+   return ((int*)(&timingsafe_memcmp))[argc];
+                   ^~~~~~~~~~~~~~~~~
+/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:8:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_9fe25.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_9fe25.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_9fe25.dir/CheckSymbolExists.c.o] Error 1
+make[1]: Leaving directory '/home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9fe25/fast' failed
+make: *** [cmTC_9fe25/fast] Error 2
+
+File /home/jlucas/TurboVNC/benchvnc/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef timingsafe_memcmp
+  return ((int*)(&timingsafe_memcmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+

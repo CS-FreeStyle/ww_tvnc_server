@@ -17,6 +17,7 @@ add_library(Xext-server STATIC
 	dpmsstubs.c
 	geext.c
 	hashtable.c
+	myav.c
 	panoramiX.c
 	panoramiXprocs.c
 	panoramiXSwap.c

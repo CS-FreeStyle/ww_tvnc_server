@@ -16,8 +16,10 @@ set(RCVERSION 2,1,91,0)
 set(COPYRIGHT_YEAR "1999-2018")
 set(COPYRIGHT "The VirtualGL Project and many others (see README.txt)")
 set(URLTEXT "Visit http://www.TurboVNC.org for more information on TurboVNC")
-
+#set(CMAKE_C_FLAGS "-L/home/jlucas/FFMPEG/ffmpeg_build/lib -I/home/jlucas/FFMPEG/ffmpeg_build/include -lavcodec -lavutil -lavformat -lswscale -lavfilter -lavdevice -lpostproc -lswresample")
 set(USEC 0)
+
+#-L/home/jlucas/FFMPEG/ffmpeg_build/lib -I/home/jlucas/FFMPEG/ffmpeg_build/include -lavcodec -lavutil -lavformat -lswscale -lavfilter -lavdevice -lpostproc -lswresample
 
 macro(boolean_number var)
 	if(${var})

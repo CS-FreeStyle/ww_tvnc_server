@@ -94,6 +94,11 @@ in this Software without prior written authorization from The Open Group.
 
 #include "extinit.h"
 
+#include "myav.h"
+#include <string.h>
+static RTSPStream rtsp_stream;
+static BMPImage image;
+
 extern timeTrack* timeTracker;
 extern long long gettime_nanoTime(void);
 int VncServerFrameNum = 0;
@@ -558,6 +563,16 @@ FILE* getLogFilePointer(pid_t cur_pid){
 static int
 ProcShmPutImage(ClientPtr client)
 {
+    int rtsp_start = 0;
+    int myw = 1280;
+    int myh = 720;
+    // static char mybuf[1280*720*4];
+
+    static FILE* fptr = NULL;
+
+    // if(fptr == NULL){
+    //     fptr = fopen("/home/jlucas/shmFB","w");
+    // }
 
     VncServerFrameNum++;
     long long tmp_time2=0;
@@ -639,6 +654,49 @@ ProcShmPutImage(ClientPtr client)
         return BadValue;
     }
 
+        // if (stuff->format == ZPixmap){
+        //     fprintf(fptr, "width: %d\nheight: %d\n\n",stuff->totalWidth,stuff->totalHeight);
+        // }
+
+    if (stuff->format == ZPixmap){
+        if(rtsp_start == 0 && init_rtsp_stream(&rtsp_stream, myw, myh, 
+                            30, 3000000, "rtsp://192.168.8.130:5545/live70") == 0){
+            start_rtsp_stream(&rtsp_stream);
+            // memset(mybuf, 255, myw*myh*4);
+            image.header.width_px = myw;
+            image.header.height_px = myh;
+            rtsp_start++;
+        }
+
+        // if (stuff->format == ZPixmap && stuff->totalWidth == 1280 && stuff->totalHeight == 720){
+            image.data = &shmdesc->addr[0];
+        // } else{
+        //     image.data = mybuf;
+        //     int i;
+        //     if (stuff->dstY+stuff->srcHeight <= myh && stuff->dstX+stuff->totalWidth <= myw){
+        //         for (i = 0; i < stuff->srcHeight; i++){
+        //             memcpy( &mybuf[((stuff->dstY)+i*myw + stuff->dstX)*4],
+        //                     (char *)&shmdesc->addr[0] + i*stuff->totalWidth*4,
+        //                     stuff->totalWidth*4);
+        //         }
+        //     }
+        // }
+        write_image_to_rtsp_stream(&rtsp_stream, &image);
+    }
+
+    //     if (stuff->format == ZPixmap && stuff->totalWidth == 300 && stuff->totalHeight == 300){
+    //     if(init_rtsp_stream(&rtsp_stream, stuff->totalWidth, stuff->totalHeight, 
+    //                         30, 3000000, "rtsp://192.168.8.130:5545/live23") == 0){
+    //         start_rtsp_stream(&rtsp_stream);
+    //         image.header.width_px = stuff->totalWidth;
+    //         image.header.height_px = stuff->totalHeight;
+    //     }
+
+    //     image.data = &shmdesc->addr[0];
+    //     write_image_to_rtsp_stream(&rtsp_stream, &image);
+    // }
+
+
     if ((((stuff->format == ZPixmap) && (stuff->srcX == 0)) ||
          ((stuff->format != ZPixmap) &&
           (stuff->srcX < screenInfo.bitmapScanlinePad) &&
@@ -655,6 +713,18 @@ ProcShmPutImage(ClientPtr client)
                                (stuff->srcY * length));
         if((shmdesc->addr[0] & 0xff)==0xde && (shmdesc->addr[1] & 0xff)==0xad && 
            (shmdesc->addr[2] & 0xff)==0xbe && (shmdesc->addr[3] & 0xff)==0xef){
+
+        // if (stuff->format == ZPixmap && stuff->totalWidth == 300 && stuff->totalHeight == 300){
+        // if(init_rtsp_stream(&rtsp_stream, stuff->totalWidth, stuff->totalHeight, 
+        //                     30, 3000000, "rtsp://192.168.8.130:5545/live40") == 0){
+        //     start_rtsp_stream(&rtsp_stream);
+        //     image.header.width_px = stuff->totalWidth;
+        //     image.header.height_px = stuff->totalHeight;
+        // }
+
+        // image.data = &shmdesc->addr[0];
+        // write_image_to_rtsp_stream(&rtsp_stream, &image);
+    // }
 
            appreqID = ((shmdesc->addr[4] & 0xff) << 24 | (shmdesc->addr[5] & 0xff) << 16 | 
                        (shmdesc->addr[6] & 0xff) << 8 | (shmdesc->addr[7] & 0xff)) & 0xffffffff;

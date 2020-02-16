@@ -1347,8 +1347,8 @@ public class CConn extends CConnection implements UserPasswdGetter,
 
         pf.write(memStream);
 
-        writer().writeFence(RFB.FENCE_FLAG_REQUEST | RFB.FENCE_FLAG_SYNC_NEXT,
-                            memStream.length(), (byte[])memStream.data());
+//        writer().writeFence(RFB.FENCE_FLAG_REQUEST | RFB.FENCE_FLAG_SYNC_NEXT,
+//                            memStream.length(), (byte[])memStream.data());
       } else {
         // New update requests are sent out before processing the last update,
         // so we cannot switch our internal format right now (doing so would
@@ -1359,7 +1359,7 @@ public class CConn extends CConnection implements UserPasswdGetter,
 
       String str = pf.print();
       vlog.info("Using pixel format " + str);
-      writer().writeSetPixelFormat(pf);
+//      writer().writeSetPixelFormat(pf);
 
       formatChange = false;
     }
@@ -1368,9 +1368,9 @@ public class CConn extends CConnection implements UserPasswdGetter,
 
     if (forceNonincremental || !continuousUpdates) {
       pendingUpdate = true;
-      writer().writeFramebufferUpdateRequest(
-        new Rect(0, 0, cp.width, cp.height),
-        !formatChange && !forceNonincremental);
+//      writer().writeFramebufferUpdateRequest(
+//        new Rect(0, 0, cp.width, cp.height),
+//        !formatChange && !forceNonincremental);
     }
 
     forceNonincremental = false;

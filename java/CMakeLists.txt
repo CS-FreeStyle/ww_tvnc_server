@@ -35,11 +35,13 @@ string(TIMESTAMP DEFAULT_JAVA_TIME "%H:%M:%S")
 set(JAVA_TIME ${DEFAULT_JAVA_TIME} CACHE STRING "Java time stamp")
 mark_as_advanced(JAVA_TIME)
 
+
 if(WIN32)
 	set(DEFAULT_TJPEG_JAR c:\\libjpeg-turbo\\classes\\turbojpeg.jar)
 else()
 	set(DEFAULT_TJPEG_JAR /opt/libjpeg-turbo/classes/turbojpeg.jar)
 endif()
+
 
 set(TJPEG_JAR ${DEFAULT_TJPEG_JAR} CACHE FILEPATH
 	"JAR file containing TurboJPEG Java classes (default: ${DEFAULT_TJPEG_JAR})")
@@ -260,6 +262,8 @@ set(CMAKE_INSTALL_JAVADIR ${CMAKE_INSTALL_JAVADIR} PARENT_SCOPE)
 set(CMAKE_INSTALL_FULL_JAVADIR ${CMAKE_INSTALL_FULL_JAVADIR} PARENT_SCOPE)
 mark_as_advanced(CLEAR CMAKE_INSTALL_JAVADIR)
 report_directory(JAVADIR)
+
+
 
 if(TVNC_BUILDSERVER AND TVNC_INCLUDEJNIJARS)
 	set(DEFAULT_TJPEG_JNIJARPATH /opt/libjpeg-turbo-jni)

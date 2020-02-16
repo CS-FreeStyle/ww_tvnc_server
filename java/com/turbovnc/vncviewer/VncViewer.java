@@ -31,6 +31,7 @@ import java.util.jar.Manifest;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
+
 import java.lang.reflect.*;
 
 import com.turbovnc.rdr.*;
@@ -381,6 +382,10 @@ public class VncViewer implements Runnable, OptionsDialogCallback {
   }
 
   public static void main(String[] argv) {
+	  
+//	FFmpegFrameGrabber grabber = new FFmpegFrameGrabber("rtsp://192.168.8.130/live40");
+	  
+	  
     setLookAndFeel();
     VncViewer viewer = new VncViewer(argv);
     if (OS.startsWith("mac os x")) {

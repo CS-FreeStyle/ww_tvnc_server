@@ -47,6 +47,13 @@
 #include "rfb.h"
 #include "sprite.h"
 
+
+#include "myav.h"
+// static RTSPStream rtsp_stream;
+// static BMPImage image;
+// FILE *fptr;
+
+
 /* #define GII_DEBUG */
 
 char updateBuf[UPDATE_BUF_SIZE];
@@ -321,6 +328,15 @@ static int JPEG_SUBSAMP[10] = {
 
 void rfbNewClientConnection(int sock)
 {
+
+    // init_rtsp_stream(&rtsp_stream, 1280, 720, 30, 3000000, "rtsp://192.168.8.130:5545/live70");
+    // start_rtsp_stream(&rtsp_stream);
+
+    // image.header.width_px = 1280;
+    // image.header.height_px = 720;
+    
+    // fptr = fopen("/home/jlucas/rfbFB","w");
+
     rfbNewClient(sock);
 }
 
@@ -537,6 +553,11 @@ static rfbClientPtr rfbNewClient(int sock)
 
 void rfbClientConnectionGone(rfbClientPtr cl)
 {
+
+    // end_rtsp_stream(&rtsp_stream);
+    // free_rtsp_stream(&rtsp_stream);
+    // fclose(fptr);
+
     int i;
 
     if (cl->prev)
@@ -2304,6 +2325,13 @@ Bool rfbSendFramebufferUpdate(rfbClientPtr cl)
     if (nUpdateRegionRects == 0xFFFF && !rfbSendLastRectMarker(cl))
         goto abort;
 
+
+    // image.data = cl->fb;
+    // fprintf(fptr,"height: %d\nwidth: %d\nbitsPerPixel: %d\nsizeInBytes: %d\npaddedWidthInBytes: %d\ndepth: %d\n\n",rfbFB.height,rfbFB.width,rfbFB.bitsPerPixel,rfbFB.sizeInBytes, rfbFB.paddedWidthInBytes, rfbFB.depth);
+    // image.data = rfbFB.pfbMemory;
+    // if(rfbFB.sizeInBytes == 1280*720*4){
+    //     write_image_to_rtsp_stream(&rtsp_stream, &image);
+    // }
 
     if (!rfbSendUpdateBuf(cl))
         goto abort;

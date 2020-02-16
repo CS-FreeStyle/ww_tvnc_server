@@ -1,5 +1,8 @@
 include_directories(Xext include miext/damage present ../../lib/pixman/pixman
+	/home/jlucas/FFMPEG/ffmpeg_build/include
 	${CMAKE_CURRENT_BINARY_DIR}/include)
+
+link_directories(/home/jlucas/FFMPEG/ffmpeg_build/lib)
 
 # Enable extensions
 add_definitions(-DCOMPOSITE -DDAMAGE -DDPMSExtension -DMITSHM -DPANORAMIX
@@ -177,7 +180,7 @@ target_link_libraries(Xvnc dix mi vnc fb Xi composite mi damage damageext randr
 	render os present Xext-server sync xfixes xkb ${X11_Xau_LIB} ${X11_Xdmcp_LIB}
 	${X11_Xfont2_LIB} ${X11_Fontenc_LIB} ${FREETYPE_LIBRARIES} ${X11_Pixman_LIB}
 	sha1 ${TJPEG_LIBRARY} ${ZLIB_LIBRARIES} ${BZIP2_LIBRARIES} vncauth m pthread
-	${PAM_LIB} ${EXTRA_LIB})
+	${PAM_LIB} ${EXTRA_LIB} avcodec avutil avformat swscale avfilter avdevice postproc swresample)
 if(APPLE OR CMAKE_SYSTEM_NAME MATCHES "(OpenBSD|FreeBSD|NetBSD|DragonFly)")
 	find_library(ICONV_LIBRARIES NAMES iconv)
 	target_link_libraries(Xvnc ${ICONV_LIBRARIES})
